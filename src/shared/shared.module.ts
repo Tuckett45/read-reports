@@ -1,7 +1,7 @@
 import { APP_BASE_HREF, CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { UserService } from "./services/user.service";
+import { AuthService } from "./services/auth.service";
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import { UserService } from "./services/user.service";
     static forRoot(): ModuleWithProviders<SharedModule> {
       return {
         ngModule: SharedModule,
-        providers: [ UserService,
+        providers: [ AuthService,
             { provide: APP_BASE_HREF, useValue: "/" }
         ],
       };
