@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class AuthService {\n  constructor() {\n    this.authUrl = \"login/authenticate\";\n  }\n  getAuth(loginForm) {\n    //TODO setup encryption for username/password and decrypt on backend \n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

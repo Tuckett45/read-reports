@@ -1,5 +1,9 @@
 <div>
-  <login-page class="main"></login-page>
+  <login-page class="main" *ngIf="!this.loggedIn"></login-page>
+</div>
+
+<div>
+  <home-page *ngIf="this.loggedIn"></home-page>
 </div>
 
 
