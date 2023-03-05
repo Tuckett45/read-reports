@@ -1,0 +1,47 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.header-col-center{
+    justify-content: center;
+    display: flex;
+}
+
+.header-col-left{
+    padding-top: 4px;;
+    justify-content: left;
+    display: flex;
+}
+
+.header-col-right{
+    justify-content: right;
+    display: flex;
+}
+
+.header-button-text{
+    font-size: 18px;
+    text-align: center;
+}
+
+.header-title{
+    text-align: center;
+    font-weight: 700; 
+    padding-top: 20px;
+}
+
+.header-img{
+    cursor: pointer; 
+    padding-top:20px;
+}
+
+.header-button{
+    width:130px;
+    height: 35px;
+}
+
+.div-center{
+    text-align: center;
+}
+
+.header-section{
+    margin-top: 10px; 
+    margin-bottom: 20px;
+}
