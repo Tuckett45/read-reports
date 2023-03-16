@@ -1,10 +1,6 @@
-<div>
-  <login-page class="main" *ngIf="!this.loggedIn"></login-page>
-</div>
 
 <div>
-  <home-page *ngIf="this.loggedIn"></home-page>
+  <reports-header class="main" *ngIf="router.url !== 'login'"></reports-header>
+  <router-outlet></router-outlet>
 </div>
 
-
-<router-outlet></router-outlet>

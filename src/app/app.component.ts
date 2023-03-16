@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 
 @Component({
@@ -7,6 +8,9 @@ import { LoginComponent } from './components/login/login.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(public router: Router){
+
+  }
   title = 'read-reports';
   loggedIn: boolean = true;
 }

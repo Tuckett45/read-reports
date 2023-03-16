@@ -10,6 +10,10 @@ import { AuthService } from 'src/shared/services/auth.service';
 import { OrdersComponent } from './components/home-page/orders/orders.component';
 import { ReportsComponent } from './components/home-page/reports/reports.component';
 import { AdminToolsComponent } from './components/home-page/admin-tools/admin-tools.component';
+import { CreateOrderComponent } from './components/home-page/orders/create-order/create-order.component';
+import { OrdersApprovalComponent } from './components/home-page/orders/orders-approval/orders-approval.component';
+import { ViewOrderComponent } from './components/home-page/orders/view-order/view-order.component';
+import { OrdersService } from 'src/shared/services/orders.service';
 
 @NgModule({
   declarations: [
@@ -19,13 +23,17 @@ import { AdminToolsComponent } from './components/home-page/admin-tools/admin-to
     HomePageComponent,
     OrdersComponent,
     ReportsComponent,
-    AdminToolsComponent
+    AdminToolsComponent,
+    CreateOrderComponent,
+    OrdersApprovalComponent,
+    ViewOrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+              OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
