@@ -13,10 +13,27 @@ import { OrdersService } from 'src/shared/services/orders.service';
 export class CreateOrderComponent {
     isAddFormValid: boolean = false;
     orderForm:FormGroup | undefined;
+    stores: StoresModel[] | undefined;
 
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, 
     private orderService: OrdersService){
+    }
+
+    getStores(){
+      //TODO - Make GET call to retrieve stores
+    }
+
+    getProducts(){
+      //TODo - make GET call to retrieve products
+    }
+
+    save(){
+      //TODO - make API call to save order
+    }
+
+    cancel(){
+      //TODo - clear order form/form values
     }
 
 
