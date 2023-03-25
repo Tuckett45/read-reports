@@ -1,14 +1,14 @@
 <div class="container">
-    <div class="panel panel-default"> 
-        <div class="panel-heading">
+    <div class="card card-default border-dark mb-3"> 
+        <div class="card-header text-white bg-dark">
                 Order Options
             <div class="pull-right" style="margin-top: -3px;">
                 <a  class="btn btn-sm btn-primary">View orders awaiting approval</a>
             </div>
         </div>
-        <div class="panel-body">
+        <div class="card-body">
             <div class="row row-wrapper">
-                <div class="col-md-6 col-xs-12">
+                <div class="col">
                     <a class="btn btn-mav btn-success" routerLink="/create-order">
                     <i class="glyphicon glyphicon-shopping-cart"></i><br>
                         Create an Order
@@ -17,7 +17,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-6 col-xs-12">
+                <div class="col">
                     <a class="btn btn-mav btn-success" onclick="requestOrderNumber()">
                     <i class="glyphicon glyphicon-search"></i><br>
                         View an Order
