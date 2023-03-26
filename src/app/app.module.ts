@@ -14,6 +14,9 @@ import { CreateOrderComponent } from './components/home-page/orders/create-order
 import { OrdersApprovalComponent } from './components/home-page/orders/orders-approval/orders-approval.component';
 import { ViewOrderComponent } from './components/home-page/orders/view-order/view-order.component';
 import { OrdersService } from 'src/shared/services/orders.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faShoppingCart as faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { OrdersService } from 'src/shared/services/orders.service';
     ViewOrderComponent
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     AppRoutingModule
   ],
@@ -36,4 +40,8 @@ import { OrdersService } from 'src/shared/services/orders.service';
               OrdersService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faShoppingCart);
+  }
+}

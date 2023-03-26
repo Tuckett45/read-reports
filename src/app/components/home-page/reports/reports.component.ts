@@ -11,8 +11,6 @@ import { StoresModel } from 'src/shared/models/stores.model';
 })
 export class ReportsComponent {
 
-
-
   constructor(private formBuilder: FormBuilder, private authService: AuthService){
     }
 

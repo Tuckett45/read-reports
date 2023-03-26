@@ -2,15 +2,15 @@
     <div class="card card-default border-dark mb-3"> 
         <div class="card-header text-white bg-dark">
                 Order Options
-            <div class="pull-right" style="margin-top: -3px;">
+            <div class="text-end" style="margin-top: -3px;">
                 <a  class="btn btn-sm btn-primary">View orders awaiting approval</a>
             </div>
         </div>
-        <div class="card-body">
+        <div class="card-body text-center">
             <div class="row row-wrapper">
                 <div class="col">
                     <a class="btn btn-mav btn-success" routerLink="/create-order">
-                    <i class="glyphicon glyphicon-shopping-cart"></i><br>
+                        <fa-icon [icon]="faShoppingCart"></fa-icon><br>
                         Create an Order
                         <div class="inner">
                             Create a new uniform order
