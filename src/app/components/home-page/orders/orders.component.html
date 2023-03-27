@@ -1,28 +1,30 @@
 <div class="container">
     <div class="card card-default border-dark mb-3"> 
-        <div class="card-header text-white bg-dark">
-                Order Options
-            <div class="text-end" style="margin-top: -3px;">
-                <a  class="btn btn-sm btn-primary">View orders awaiting approval</a>
-            </div>
+        <div class="card-header text-white row" style="background-color: #495057; margin-left: 0; margin-right: 0;">
+                <div class="text-start col"> 
+                    <h5>Order Options</h5>
+                </div>
+                <div class="text-end col">
+                    <a class="btn btn-sm btn-primary">View orders awaiting approval</a>
+                </div>
         </div>
-        <div class="card-body text-center">
+        <div class="card-body text-center" style="background-color: #dee2e6;">
             <div class="row row-wrapper">
                 <div class="col">
-                    <a class="btn btn-mav btn-success" routerLink="/create-order">
+                    <a class="btn btn-mav btn-success" style="background-color: #5cb85c;" routerLink="/create-order">
                         <fa-icon [icon]="faShoppingCart"></fa-icon><br>
                         Create an Order
                         <div class="inner">
-                            Create a new uniform order
+                            <small>Create a new uniform order</small>
                         </div>
                     </a>
                 </div>
                 <div class="col">
-                    <a class="btn btn-mav btn-success" onclick="requestOrderNumber()">
+                    <a class="btn btn-mav btn-success" style="background-color: #5cb85c;" onclick="requestOrderNumber()">
                     <i class="glyphicon glyphicon-search"></i><br>
                         View an Order
                         <div class="inner">
-                            View an order by entering in its order ID
+                            <small>View an order by entering in its order ID</small>
                         </div>
                     </a>
                 </div>
