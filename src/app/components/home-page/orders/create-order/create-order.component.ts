@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/shared/services/auth.service';
 import { DistrictsModel } from 'src/shared/models/districts.model';
 import { RegionsModel } from 'src/shared/models/regions.model';
@@ -10,14 +10,24 @@ import { OrdersService } from 'src/shared/services/orders.service';
   selector: 'create-order',
   templateUrl: './create-order.component.html'
 })
-export class CreateOrderComponent {
+export class CreateOrderComponent implements OnInit {
     isAddFormValid: boolean = false;
-    orderForm:FormGroup | undefined;
+    isEmployeeIdRequired: boolean = false;
     stores: StoresModel[] | undefined;
+    orderForm!: FormGroup;
 
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, 
+    constructor(private formBuilder: FormBuilder, private authService: AuthService, 
     private orderService: OrdersService){
+
+    }
+    ngOnInit() {
+      this.orderForm = this.formBuilder.group({
+          store: ['', Validators.required],
+          product: ['', Validators.required],
+          quantity: [0, Validators.required],
+          employeeId: [0]
+      });
     }
 
     getStores(){
@@ -30,6 +40,15 @@ export class CreateOrderComponent {
 
     save(){
       //TODO - make API call to save order
+    }
+
+    addItem(itemadded: object){
+      this.orderForm.setValue(itemadded);
+    }
+
+    cancelItem(){
+      //TODO - remove single item from table
+      this.orderForm.reset();
     }
 
     cancel(){

@@ -17,6 +17,8 @@ import { OrdersService } from 'src/shared/services/orders.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faShoppingCart as faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { faShoppingCart as faShoppingCart } from '@fortawesome/free-solid-svg-ic
   imports: [
     FontAwesomeModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    SharedModule
   ],
   providers: [AuthService,
               OrdersService],
