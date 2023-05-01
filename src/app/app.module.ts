@@ -20,6 +20,7 @@ import { faShoppingCart as faShoppingCart } from '@fortawesome/free-solid-svg-ic
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
