@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { LoginComponent } from './components/login/login.component';
@@ -19,6 +19,10 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faShoppingCart as faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/shared/shared.module';
+import { MatSortModule, Sort} from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { AdjustmentComponent } from './components/home-page/reports/adjustment/adjustment.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -32,7 +36,8 @@ import { SharedModule } from 'src/shared/shared.module';
     AdminToolsComponent,
     CreateOrderComponent,
     OrdersApprovalComponent,
-    ViewOrderComponent
+    ViewOrderComponent,
+    AdjustmentComponent
   ],
   imports: [
     FontAwesomeModule,
@@ -40,11 +45,18 @@ import { SharedModule } from 'src/shared/shared.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [AuthService,
               OrdersService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {

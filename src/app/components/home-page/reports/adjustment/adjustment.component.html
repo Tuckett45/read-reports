@@ -1,4 +1,5 @@
-<div *ngIf="!this.adjustmentReportData" class="row">
+<div *ngIf="!this.adjustmentReportData" class="container">
+  <div  class="row">
     <div class="col-md-3 col-sm-1"></div>
     <div class="col-md-6 col-sm-10">
         <div class="panel panel-default">
@@ -9,43 +10,57 @@
                     <input id="dtStart" type="hidden" name="FromDate" value="04/29/2023">
                     <input id="dtEnd" type="hidden" name="ToDate" value="04/29/2023">
                     <input name="fuse" type="hidden" value="order_list">
-                    <button type="submit" class="btn btn-primary">Run Report</button>
+                    <button (click)="runAdjustmentReport()" class="btn btn-primary">Run Report</button>
                 </form>
             </div>
         </div>
     </div>
     <div class="col-md-3 col-sm-1"></div>
+    </div>
 </div>
 
 
 <div *ngIf="this.adjustmentReportData" class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource" matSort>
-  
-      <!-- Position Column -->
+  <table mat-table [dataSource]="dataSource" matSort
+    class="mat-elevation-z8">
+
+    <!-- Position Column -->
       <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+          No.
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
       </ng-container>
-  
-      <!-- Name Column -->
+
+    <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
-  
-      <!-- Weight Column -->
+
+    <!-- Weight Column -->
       <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by weight">
+          Weight
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
       </ng-container>
-  
-      <!-- Symbol Column -->
+
+    <!-- Symbol Column -->
       <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+          Symbol
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
       </ng-container>
-  
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-  </div>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                showFirstLastButtons 
+                aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

@@ -6,6 +6,7 @@ import { RegionsModel } from 'src/shared/models/regions.model';
 import { StoresModel } from 'src/shared/models/stores.model';
 import { faList, faHouse, faUser, faBarcode, faRightToBracket, faPlaneUp, faShuffle, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'reports-section',
   templateUrl: './reports.component.html'
