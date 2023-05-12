@@ -2,15 +2,20 @@
   <div  class="row">
     <div class="col-md-3 col-sm-1"></div>
     <div class="col-md-6 col-sm-10">
-        <div class="panel panel-default">
-            <div class="panel-heading">Please Choose a Date Range</div>
-            <div class="panel-body" style="padding-bottom: 10px;text-align: center;">
+        <div class="card card-default border-dark mb-3">
+            <div class="card-header text-white" style="background-color: #495057;">Please Choose a Date Range</div>
+            <div class="card-body" style="padding-bottom: 10px;text-align: center;">
                 <form action="index.cfm" class="form-inline" id="form1" method="post" name="form1">
-                    <input type="text" class="form-control" id="daterange" size="23">
-                    <input id="dtStart" type="hidden" name="FromDate" value="04/29/2023">
-                    <input id="dtEnd" type="hidden" name="ToDate" value="04/29/2023">
-                    <input name="fuse" type="hidden" value="order_list">
-                    <button (click)="runAdjustmentReport()" class="btn btn-primary">Run Report</button>
+                  <mat-form-field>
+                    <mat-label>Choose Date Range</mat-label>
+                    <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+                      <input matStartDate formControlName="start" placeholder="Start Date">
+                      <input matEndDate formControlName="end" placeholder="End Date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                  </mat-form-field>
+                  <button (click)="runAdjustmentReport()" class="btn btn-primary">Run Report</button>
                 </form>
             </div>
         </div>

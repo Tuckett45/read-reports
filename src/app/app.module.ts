@@ -23,6 +23,8 @@ import { MatSortModule, Sort} from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { AdjustmentComponent } from './components/home-page/reports/adjustment/adjustment.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -48,7 +50,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SharedModule,
     MatSortModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
   ],
   providers: [AuthService,
               OrdersService],
