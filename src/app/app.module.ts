@@ -25,9 +25,13 @@ import { AdjustmentComponent } from './components/home-page/reports/adjustment/a
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
+  exports: [MatDatepickerModule],
   declarations: [
     AppComponent,
     LoginComponent,
@@ -54,6 +58,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatNativeDateModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService,
               OrdersService],

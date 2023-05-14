@@ -6,7 +6,8 @@ import { DistrictsModel } from 'src/shared/models/districts.model';
 import { RegionsModel } from 'src/shared/models/regions.model';
 import { MatSort, Sort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 export interface PeriodicElement {
   name: string;
@@ -42,9 +43,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'adjustment-report',
   templateUrl: './adjustment.component.html'
 })
-export class AdjustmentComponent implements AfterViewInit {
+export class AdjustmentComponent implements OnInit {
     @Input()
     arrowPosition: 'before' | 'after' = "before";
+    faCalendar = faCalendar;
     adjustmentReportData: boolean = false;
     isEmployeeIdRequired: boolean = false;
     displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
@@ -68,7 +70,7 @@ export class AdjustmentComponent implements AfterViewInit {
      * Set the sort after the view init since this component will
      * be able to query its view for the initialized sort.
      */
-    ngAfterViewInit() {
+    ngOnInit() {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     }

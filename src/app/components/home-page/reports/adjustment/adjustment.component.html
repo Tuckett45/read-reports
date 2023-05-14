@@ -5,17 +5,28 @@
         <div class="card card-default border-dark mb-3">
             <div class="card-header text-white" style="background-color: #495057;">Please Choose a Date Range</div>
             <div class="card-body" style="padding-bottom: 10px;text-align: center;">
-                <form action="index.cfm" class="form-inline" id="form1" method="post" name="form1">
-                  <mat-form-field>
-                    <mat-label>Choose Date Range</mat-label>
-                    <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
-                      <input matStartDate formControlName="start" placeholder="Start Date">
-                      <input matEndDate formControlName="end" placeholder="End Date">
+                <form action="index.cfm" class="form-inline row" id="form1" method="post" name="form1">
+                  <mat-form-field class="col-4">
+                    <mat-date-range-input [matDatepicker]="pickerStart" [formGroup]="dateRange">
+                      <input matInput matStartDate formControlName="start" placeholder="Start Date">
                     </mat-date-range-input>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-date-range-picker #picker></mat-date-range-picker>
+                    <mat-datepicker-toggle matSuffix [for]="pickerStart">
+                      <mat-icon matDatepickerToggleIcon ><fa-icon [icon]="faCalendar"></fa-icon></mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-date-range-picker #pickerStart></mat-date-range-picker>
                   </mat-form-field>
-                  <button (click)="runAdjustmentReport()" class="btn btn-primary">Run Report</button>
+                  <mat-form-field class="col-4">
+                    <mat-date-range-input [matDatepicker]="pickerEnd" [formGroup]="dateRange">
+                      <input matInput matEndDate formControlName="end" placeholder="End Date">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="pickerEnd">
+                      <mat-icon matDatepickerToggleIcon ><fa-icon [icon]="faCalendar"></fa-icon></mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-date-range-picker #pickerEnd></mat-date-range-picker>
+                  </mat-form-field>
+                  <div class="col-4">
+                    <button (click)="runAdjustmentReport()" class="btn btn-primary">Run Report</button>
+                  </div>
                 </form>
             </div>
         </div>

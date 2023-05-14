@@ -4,7 +4,7 @@ import { AuthService } from 'src/shared/services/auth.service';
 import { DistrictsModel } from 'src/shared/models/districts.model';
 import { RegionsModel } from 'src/shared/models/regions.model';
 import { StoresModel } from 'src/shared/models/stores.model';
-import { faList, faHouse, faUser, faBarcode, faRightToBracket, faPlaneUp, faShuffle, faDollarSign } from '@fortawesome/free-solid-svg-icons';
+import { faList, faHouse, faUser, faBarcode, faRightToBracket, faPlaneUp, faShuffle, faDollarSign, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class ReportsComponent {
   faPlaneUp = faPlaneUp;
   faShuffle = faShuffle;
   faDollarSign = faDollarSign;
+  faCalendar = faCalendar;
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService){
     }
